@@ -8,13 +8,11 @@ export default class UI {
 
         // set the container element to watch for swipes
         this.swipeContainer = document.getElementById(this.params.container);
-
-
-        if (!this.params.onUserAction) {
-            throw new Error('UI: onUserAction callback is required', this.params.onUserAction);
-        }
-
         this.initControls();
+    }
+
+    setUserActionCallback(callback) {
+        this.params.onUserAction = callback;
     }
 
 

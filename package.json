@@ -3,19 +3,19 @@
     "version": "1.0.0",
     "main": "index.js",
     "directories": {
-      "example": "example"
+        "example": "example"
     },
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "server": "node server.js"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "server": "node server.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "description": "",
     "dependencies": {
-      "express": "^4.21.2",
-      "serve-static": "^1.16.2"
+        "express": "^4.21.2",
+        "say": "^0.16.0",
+        "serve-static": "^1.16.2"
     }
-  }
-  
+}
