@@ -15,7 +15,6 @@ export default class UI {
         this.params.onUserAction = callback;
     }
 
-
     // initialize the four direction swipe controls
     initControls() {
         this.swipeManager = new Swipe({
@@ -34,7 +33,6 @@ export default class UI {
         let actionData = {};
         this.params.onUserAction(direction, actionData);
     }
-
 
 }
 

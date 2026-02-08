@@ -1,24 +1,19 @@
 const { textToSpeech } = require('./server/tts.js');
-
 const express = require('express');
-const serveStatic = require('serve-static');
 
 const app = express();
 const port = process.env.PORT || 3008;
 const path = require('path');
-var say = require('say');
 
 const DATA_DIR = path.join(__dirname, 'data');
 const SRC = path.join(__dirname, 'src');
 
 // GET endpoint to fetch tag descriptions
-
 app.get('/', (req, res) => {
   res.sendFile(path.join(SRC, 'index.html'));
 });
 
 // serve everything in src
-console.log(SRC);
 app.use(express.static(SRC));
 
 // POST /api/dialogue
@@ -34,8 +29,6 @@ app.post('/api/dialogue', express.json(), (req, res) => {
   textToSpeech(DATA_DIR, text).then(file => {
     res.sendFile(file);
   });
-
-  
 });
 
 app.listen(port, () => {

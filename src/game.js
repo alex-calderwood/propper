@@ -10,8 +10,19 @@ export default class Game {
         }
 
         this.ui = this.params.ui;
-
         this.ui.onUserAction = this.onUserAction.bind(this);
+
+        this.tracker = new Tracker({
+            game: this,
+        });
+
+        this.state = {
+            currentChallenge: null,
+            timeSinceLastChallenge: 0,
+            distanceSinceLastChallenge: 0,
+            travelDistance: 0,
+            travelTime: 0,
+        }
     }
 
     speak(audioBlob) {
